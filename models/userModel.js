@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
         type : Array
     },
     phone : {
-        type ; String , 
+        type : String , 
         required : [true , 'phone number is require']
     },
     usertype : {
