@@ -3,12 +3,16 @@ const colors = require("colors");
 const cors = require("cors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const connnectDb = require("./config/db.js");
 
 
 
 //dotenv config
 //we do not require path , as server.js is already present in the root directory with .env file , so no need to give path in dotenv.confi
 dotenv.config();
+
+//DB Connection
+connnectDb() ;
 
 //rest object
 const app = express();
