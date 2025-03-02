@@ -25,6 +25,7 @@ app.use(morgan("dev"));
 //route
 app.use('/api/v1/test' , require('./routes/testRoutes.js')) ;   //it is not much important to write .js after testRoutes (but it becomes important when we are using import export methods)
 app.use('/api/v1/auth' , require("./routes/authRoutes.js"))
+app.use('/api/v1/user' , require('./routes/userRoutes.js')) ;
 
 // route
 app.get("/", (req, res) => {
