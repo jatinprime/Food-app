@@ -15,7 +15,7 @@ dotenv.config();
 connnectDb() ;
 
 //rest object
-const app = express();
+const app = express() ;
 
 //middlewares
 app.use(cors());
