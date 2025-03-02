@@ -15,6 +15,7 @@ const verifyJWT = async (req , res , next) => {
                     message : "Un-Authorize User"
                 });
             }else{
+                //we are putting the id in the req.body so to get the info about the user through user id
                 req.body.id = decode.id ;
                 next() ;
             }
