@@ -1,5 +1,8 @@
 const userModel = require("../models/userModel");
 //we can use any name in place of userModel , but the best practice is to use the same name
+const bcrypt = require("bcryptjs") ;
+const JWT = require('jsonwebtoken') ;
+
 
 const registerController = async (req, res) => {
     try {
@@ -24,12 +27,17 @@ const registerController = async (req, res) => {
             });
         }
 
-        //now everything is fine (CREATE A NEW USER)
+        //hashing password
+        var salt = bcrypt.genSaltSync(10) ;
+        const hashedPassword = await bcrypt.hash(password , salt) ;
 
+
+
+        //now everything is fine (CREATE A NEW USER)
         const user = await userModel.create({
             userName,
             email,
-            password,
+            password : hashedPassword ,
             address,
             phone,
         });
@@ -63,19 +71,39 @@ const loginController = async (req , res) => {
         }
 
         //Check for the User in the database
-        const user = await userModel.findOne({email , password}) ;
+        const user = await userModel.findOne({email}) ;
 
         if(!user){
             return res.status(404).send({
                 success : false,
-                message : "User Not Found or Password Incorrect",
+                message : "User Not Found",
             });
         }
+
+        //check user password | compare password
+        const isMatch = await bcrypt.compare(password , user.password) ;
+
+        if(!isMatch){
+            return res.status(500).send({
+                success : false,
+                message : "Invalid Credentials",
+            });
+        }
+
+        user.password = undefined ;
+
+
+        //token
+        const token = JWT.sign({id : user._id} , process.env.JWT_SECRET , {
+            expiresIn : "7d",
+        });
+
 
         res.status(200).send({
             success : true,
             message : "Login Successfully",
             user : user,
+            token : token,
         });
 
     } catch (error) {
