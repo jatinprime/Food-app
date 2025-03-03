@@ -1,5 +1,5 @@
 const express = require('express') ;
-const { getUserController, updateUserController, resetPasswordController, updatePasswordController } = require('../controllers/userController');
+const { getUserController, updateUserController, resetPasswordController, updatePasswordController, deleteProfileController } = require('../controllers/userController');
 const { verifyJWT } = require('../middlewares/authMiddleware');
 
 
@@ -19,4 +19,8 @@ router.post('/updatePassword' , verifyJWT , updatePasswordController)
 //RESET PASSWORD
 router.post('/resetPassword', verifyJWT , resetPasswordController)
  
+//DELETE USER
+router.delete('/deleteUser/:id' , verifyJWT , deleteProfileController)
+
+
 module.exports = router ;
