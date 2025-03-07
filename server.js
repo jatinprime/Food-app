@@ -27,6 +27,7 @@ app.use('/api/v1/test' , require('./routes/testRoutes.js')) ;   //it is not much
 app.use('/api/v1/auth' , require("./routes/authRoutes.js"))
 app.use('/api/v1/user' , require('./routes/userRoutes.js')) ;
 app.use('/api/v1/restaurant' , require('./routes/restaurantRoutes.js'))
+app.use('/api/v1/category' , require("./routes/categoryRoutes.js")) 
 
 // route
 app.get("/", (req, res) => {
