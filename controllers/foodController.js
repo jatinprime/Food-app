@@ -1,4 +1,5 @@
 const foodModel = require("../models/foodModel");
+const restaurantModel = require("../models/restaurantModel");
 
 //CREATE FOOD
 const createFoodController = async (req, res) => {
@@ -20,6 +21,14 @@ const createFoodController = async (req, res) => {
             return res.status(500).send({
                 success : false , 
                 message : "Please provide all fields" ,
+            })
+        }
+
+        const validationForRestaurant = await restaurantModel.findById(restaurant) ;
+        if(!validationForRestaurant){
+            return res.status(500).send({
+                success : false , 
+                message : "Please provide valid Restaurant" 
             })
         }
 
