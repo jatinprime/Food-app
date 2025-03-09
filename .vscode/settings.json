@@ -1,65 +1,117 @@
-{
-    "files.associations": {
-        "xstring": "cpp",
-        "ostream": "cpp",
-        "xutility": "cpp",
-        "initializer_list": "cpp",
-        "*.tcc": "cpp",
-        "string": "cpp",
-        "unordered_map": "cpp",
-        "unordered_set": "cpp",
-        "vector": "cpp",
-        "iostream": "cpp",
-        "bitset": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "disabled",
-    "workbench.colorCustomizations": {
-        "editor.background": "#12131b",  // Dark bluish-gray background
-        "editor.foreground": "#EAEAEA",  // Soft off-white text
-        "editorCursor.foreground": "#FFCC00",  // Yellow cursor for visibility
-        "editor.lineHighlightBackground": "#292D3E",  // Soft highlight on current line
-        "editor.selectionBackground": "#404759",  // Muted blue-gray selection
-        "editor.inactiveSelectionBackground": "#2A2E3F",
-        "editorBracketMatch.background": "#2C313C",
-        "editorBracketMatch.border": "#FF8C00",
+// {
+//     "files.associations": {
+//         "xstring": "cpp",
+//         "ostream": "cpp",
+//         "xutility": "cpp",
+//         "initializer_list": "cpp",
+//         "*.tcc": "cpp",
+//         "string": "cpp",
+//         "unordered_map": "cpp",
+//         "unordered_set": "cpp",
+//         "vector": "cpp",
+//         "iostream": "cpp",
+//         "bitset": "cpp"
+//     },
+//     "C_Cpp.errorSquiggles": "disabled",
+//     "workbench.colorCustomizations": {
+//         "editor.background": "#12131b",  // Dark bluish-gray background
+//         "editor.foreground": "#EAEAEA",  // Soft off-white text
+//         "editorCursor.foreground": "#FFCC00",  // Yellow cursor for visibility
+//         "editor.lineHighlightBackground": "#292D3E",  // Soft highlight on current line
+//         "editor.selectionBackground": "#404759",  // Muted blue-gray selection
+//         "editor.inactiveSelectionBackground": "#2A2E3F",
+//         "editorBracketMatch.background": "#2C313C",
+//         "editorBracketMatch.border": "#FF8C00",
 
-        // Minimap Colors
-        "minimap.background": "#181A26",
-        "minimap.foreground": "#4D4D4D",
-        "minimapSlider.background": "#8888FF55",
-        "minimapSlider.hoverBackground": "#8888FF77",
-        "minimapSlider.activeBackground": "#8888FFFF",
+//         // Minimap Colors
+//         "minimap.background": "#181A26",
+//         "minimap.foreground": "#4D4D4D",
+//         "minimapSlider.background": "#8888FF55",
+//         "minimapSlider.hoverBackground": "#8888FF77",
+//         "minimapSlider.activeBackground": "#8888FFFF",
 
-        // UI Customizations
-        "activityBar.background": "#252A36",
-        "sideBar.background": "#202431",
-        "sideBar.foreground": "#A9B1D6",
-        "titleBar.activeBackground": "#191C26",
-        "titleBar.activeForeground": "#A9B1D6",
+//         // UI Customizations
+//         "activityBar.background": "#252A36",
+//         "sideBar.background": "#202431",
+//         "sideBar.foreground": "#A9B1D6",
+//         "titleBar.activeBackground": "#191C26",
+//         "titleBar.activeForeground": "#A9B1D6",
 
-        // Tabs
-        "tab.activeBackground": "#292D3E",
-        "tab.inactiveBackground": "#1B1E2B",
-        "tab.activeForeground": "#FFFFFF",
-        "tab.inactiveForeground": "#A9B1D6",
+//         // Tabs
+//         "tab.activeBackground": "#292D3E",
+//         "tab.inactiveBackground": "#1B1E2B",
+//         "tab.activeForeground": "#FFFFFF",
+//         "tab.inactiveForeground": "#A9B1D6",
 
-        // Overview Ruler
-        "editorOverviewRuler.background": "#00000000"
-    },
+//         // Overview Ruler
+//         "editorOverviewRuler.background": "#00000000"
+//     },
     
-    "editor.tokenColorCustomizations": {
-        "comments": "#fa00e1", // Green for comments
-        "strings": "#00ffb3", // Soft red for strings
-        "keywords": "#00ffe1", // Purple for keywords
-        "functions": "#DCDCAA", // Light yellow for functions
-        "variables": "#aff8f8", // Light blue for variables
-        "numbers": "#B5CEA8", // Light green for numbers
-        "types": "#2e9b9b", // Blue for types
-        "operators": "#D4D4D4" // Neutral white-gray for operators
-    },
+//     "editor.tokenColorCustomizations": {
+//         "comments": "#fa00e1", // Green for comments
+//         "strings": "#CE9178", // Soft red for strings
+//         "keywords": "#24f4f4", // Purple for keywords
+//         "functions": "#DCDCAA", // Light yellow for functions
+//         "variables": "#aff8f8", // Light blue for variables
+//         "numbers": "#B5CEA8", // Light green for numbers
+//         "types": "#24f4f4", // Blue for types
+//         "operators": "#D4D4D4" // Neutral white-gray for operators
+//     },
 
-    "editor.minimap.enabled": true,
-    "editor.minimap.scale": 1,
-    "editor.minimap.showSlider": "always",
-    "editor.minimap.renderCharacters": true
+//     "editor.minimap.enabled": true,
+//     "editor.minimap.scale": 1,
+//     "editor.minimap.showSlider": "always",
+//     "editor.minimap.renderCharacters": true
+// }
+
+
+{"workbench.colorCustomizations": {
+    "editor.background": "#000000",  
+    "editor.foreground": "#F8F8F2",
+    "editorCursor.foreground": "#FF66CC",
+    "editor.lineHighlightBackground": "#232335",
+    "editor.selectionBackground": "#5058F0",
+    "editor.inactiveSelectionBackground": "#2835ac",
+    "editorBracketMatch.background": "#282A36",
+    "editorBracketMatch.border": "#FF77AA",
+
+    // Minimap Colors
+    "minimap.background": "#141420",
+    "minimap.foreground": "#656B80",
+    "minimapSlider.background": "#8888FF55",
+    "minimapSlider.hoverBackground": "#8888FF77",
+    "minimapSlider.activeBackground": "#8888FFFF",
+
+    // UI Customizations
+    "activityBar.background": "#0e5f5a",
+    "sideBar.background": "#090132",
+    "sideBar.foreground": "#ffffff",
+    "titleBar.activeBackground": "#2393c4",
+    "titleBar.activeForeground": "#FFFFFF",
+
+    // Tabs
+    "tab.activeBackground": "#281B46",
+    "tab.inactiveBackground": "#1B1E2B",
+    "tab.activeForeground": "#FFFFFF",
+    "tab.inactiveForeground": "#A9B1D6",
+
+    // Line numbers
+    "editorLineNumber.foreground": "#2393c4",
+    "editorLineNumber.activeForeground": "#ff6262af",
+
+    // Terminal colors
+    "terminal.background": "#0F0F17",
+    "terminal.foreground": "#F8F8F2",
+    "terminalCursor.foreground": "#FF66CC"
+},
+"editor.tokenColorCustomizations": {
+    "comments": "#4dff00",  // Dark, bold pink (stands out but not too bright)
+    "strings": "#00C4E4",  // Slightly darker electric blue (clear & smooth)
+    "keywords": "#1affff",  // Deep cyan-blue (not too light, super clear)
+    "functions": "#ff22f0",  // More intense dark pink (not washed out)
+    "variables": "#4ef6ff",  // Deep blue but still bright
+    "numbers": "#fbfffe",  // Teal-green, darkened slightly
+    "types": "#0078D7",  // True deep blue (not purple)
+    "operators": "#E0E0E0"  // Soft off-white, so it doesn’t overpower
+}
 }
