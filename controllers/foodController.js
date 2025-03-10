@@ -213,10 +213,43 @@ const updateFoodController = async (req, res) => {
     }
 };
 
+//DELETE FOOD
+const deleteFoodController = async(req , res) => {
+    try {
+        const foodId = req.params.id ;
+        if(!foodId){
+            return res.status(404).send({
+                success : false , 
+                message : "Provide food id",
+            })
+        }
+        const food = await foodModel.findById(foodId) ;
+        if(!food){
+            return res.status(404).send({
+                success : false , 
+                message : "No Food Found with id",
+            })
+        }
+        await foodModel.findByIdAndDelete(foodId) ;
+        res.status(200).send({
+            success : true , 
+            message : "Food Item Deleted"
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error In DELETE food API",
+            error,
+        });
+    }
+}
+
 module.exports = {
     createFoodController,
     getAllFoodsController,
     getSingleFoodController,
     getFoodByRestaurantController,
     updateFoodController,
+    deleteFoodController
 };
