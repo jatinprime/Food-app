@@ -2,7 +2,7 @@ const express = require("express");
 
 const { verifyJWT } = require("../middlewares/authMiddleware");
 
-const { createFoodController, getAllFoodsController, getSingleFoodController } = require("../controllers/foodController");
+const { createFoodController, getAllFoodsController, getSingleFoodController, getFoodByRestaurantController } = require("../controllers/foodController");
 
 const router = express.Router();
 
@@ -14,6 +14,9 @@ router.post("/create", verifyJWT, createFoodController);
 router.get("/getAll" , getAllFoodsController) ;
 
 //GET SINGLE FOOD
-router.get("/get/:id" , getSingleFoodController) ;
+router.get("/get/:id" , getSingleFoodController) ; 
+
+//GET FOOD BY RESTAURANT
+router.get("/getByRestaurant/:id" , getFoodByRestaurantController) ;
 
 module.exports = router;
