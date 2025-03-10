@@ -61,4 +61,60 @@ const createFoodController = async (req, res) => {
     }
 };
 
-module.exports = { createFoodController };
+//GET ALL FOODS
+const getAllFoodsController = async (req , res) => {
+    try{
+        const foods = await foodModel.find({}) ;
+        if(!foods){
+            return res.status(404).send({
+                success : false , 
+                message : "No Food items are found" 
+            })
+        }
+
+        res.status(200).send({
+            success : true ,
+            totalFoods : foods.length , 
+            foods
+        }) ;
+    }catch(error){
+        console.log(error) ;
+        res.status(500).send({
+            success : false , 
+            message : "Error in Get All Foods API",
+            error
+        })
+    }
+}
+
+//GET SINGLE FOOD
+const getSingleFoodController = async (req , res) => {
+    try{
+        const foodId = req.params.id ;
+        if(!foodId){
+            return res.status(404).send({
+                success : false , 
+                message : "No Food Id Found" 
+            })
+        }
+        const food = await foodModel.findById(foodId) ;
+        if(!food){
+            return res.status(404).send({
+                success : false , 
+                message : "No Food item is found" 
+            })
+        }
+        res.status(200).send({
+            success : true , 
+            food ,
+        }) ;
+    }catch(error){
+        console.log(error) ;
+        res.status(500).send({
+            success : false , 
+            message : "Error In get Single food API" , 
+            error
+        })
+    }
+}
+module.exports = { createFoodController , getAllFoodsController , getSingleFoodController };
