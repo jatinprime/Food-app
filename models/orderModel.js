@@ -12,6 +12,7 @@ const ordersSchema = new mongoose.Schema(
         },
         status: {
             type: String,
+            //ONLY SOME VALUES ARE POSSIBLE
             enum: ["preparing", "prepare", "on the way", "deliverd"],
             default: "preparing",
         },
