@@ -2,7 +2,8 @@ const express = require("express");
 
 const { verifyJWT } = require("../middlewares/authMiddleware");
 
-const { createFoodController, getAllFoodsController, getSingleFoodController, getFoodByRestaurantController, updateFoodController, deleteFoodController, placeOrderController } = require("../controllers/foodController");
+const { createFoodController, getAllFoodsController, getSingleFoodController, getFoodByRestaurantController, updateFoodController, deleteFoodController, placeOrderController, orderStatusController } = require("../controllers/foodController");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 const router = express.Router();
 
@@ -28,5 +29,7 @@ router.delete("/delete/:id" , verifyJWT , deleteFoodController)
 //PLACE ORDER
 router.post("/placeorder" , verifyJWT , placeOrderController)
 
+//ORDER STATUS
+router.post("/orderStatus/:id" , verifyJWT , adminMiddleware , orderStatusController)
 
 module.exports = router;
